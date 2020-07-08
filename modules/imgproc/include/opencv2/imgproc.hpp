@@ -3329,7 +3329,7 @@ mode==GC_EVAL .
  */
 CV_EXPORTS_W void grabCut( InputArray img, InputOutputArray mask, Rect rect,
                            InputOutputArray bgdModel, InputOutputArray fgdModel,
-                           int iterCount, int mode = GC_EVAL );
+                           int iterCount, int mode = GC_EVAL, double gamma = 50.0 );
 
 /** @example samples/cpp/distrans.cpp
 An example on using the distance transform

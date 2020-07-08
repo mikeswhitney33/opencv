@@ -542,7 +542,7 @@ static void estimateSegmentation( GCGraph<double>& graph, Mat& mask )
 
 void cv::grabCut( InputArray _img, InputOutputArray _mask, Rect rect,
                   InputOutputArray _bgdModel, InputOutputArray _fgdModel,
-                  int iterCount, int mode )
+                  int iterCount, int mode, double gamma )
 {
     CV_INSTRUMENT_REGION();
 
@@ -577,7 +577,6 @@ void cv::grabCut( InputArray _img, InputOutputArray _mask, Rect rect,
     if( mode == GC_EVAL || mode == GC_EVAL_FREEZE_MODEL )
         checkMask( img, mask );
 
-    const double gamma = 50;
     const double lambda = 9*gamma;
     const double beta = calcBeta( img );
 
